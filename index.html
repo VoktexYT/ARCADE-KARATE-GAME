@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade Karate</title>
+    <script src="./phaser.js"></script>
+    <base href=".">
+    <link rel="shortcut icon" href="#">
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <style>
+        @font-face {
+            font-family: 'pixelMoney';
+            src: url('./font/manaspc.ttf');
+            font-weight: normal;
+        }
+    </style>
+
+    <div style="font-family: 'pixelMoney'; position: absolute; left:-1000px; visibility:hidden;">.</div>
+
+    <script src="./script.js"></script>
+
+
+    <script>
+        const config = {
+            type: Phaser.AUTO,
+            width: 700,
+            height: 1560,
+            scene: [
+                Main
+            ],
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: { y: 0 },
+                    debug: false
+                }
+            },
+            audio: {
+                disableWebAudio: true
+            },
+            fps: {
+                target: 2,
+                min: 2,
+                forceSetTimeOut: true
+            }
+        };
+
+        game = new Phaser.Game(config);
+
+        function resize() {
+            var canvas = game.canvas, width = window.innerWidth, height = window.innerHeight;
+            var wratio = width / height, ratio = canvas.width / canvas.height;
+
+            if (wratio < ratio) {
+                canvas.style.width = width + "px";
+                canvas.style.height = (width / ratio) + "px";
+            } else {
+                canvas.style.width = (height * ratio) + "px";
+                canvas.style.height = height + "px";
+            }
+        }
+
+        setInterval(resize, 1000)
+    </script>
+    
+</body>
+</html>
