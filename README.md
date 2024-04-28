@@ -1,3 +1,3 @@
 To play Arcade Karate Game
 
-https://winstonwolf007.github.io/ARCADE-KARATE-GAME/
+https://voktexyt.github.io/ARCADE-KARATE-GAME/
